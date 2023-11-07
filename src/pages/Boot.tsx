@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import { useInterval } from '../hook/useInterval'
 import { BsApple } from 'react-icons/bs'
-import { IconContext } from 'react-icons';
+import { IconContext } from 'react-icons'
 
 interface BootProps {
   restart: boolean
@@ -33,9 +33,9 @@ const Boot: React.FC<BootProps> = ({ restart, sleep, setBooting }): JSX.Element 
     loading ? loadingInterval : null
   )
 
-  const handleClick = () => {
+  const handleClick = (): void => {
     if (sleep) setBooting(false)
-    else if (restart || loading) return
+    else if (restart || loading) return 
     else setLoading(true)
   }
 
