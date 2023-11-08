@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import wallpapers from '../config/wallpapers'
 import TopBar from '../components/menu/TopBar'
+import Dock from '../components/dock/Dock'
 
 const Desktop: React.FC = (): JSX.Element => {
   const [DarkMode, setDarkMode] = useState<boolean>(false)
@@ -11,6 +12,9 @@ const Desktop: React.FC = (): JSX.Element => {
         }) center/cover no-repeat`
         }}>
           <TopBar/>
+          <div className='flex justify-center'>
+          <Dock/>
+          </div>
         </div>
   )
 }

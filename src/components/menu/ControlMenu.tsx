@@ -4,8 +4,8 @@ import { IconContext } from 'react-icons'
 
 const ControlMenu: React.FC = (): JSX.Element => {
   return (
-        <div className='flex'>
-            <IconContext.Provider value={{ className: 'h-3.5 w-3.5' }}>
+        <div className='flex hover:bg-gray-300/20 p-0.5 rounded cursor-pointer'>
+            <IconContext.Provider value={{ className: 'h-4 w-4' }}>
                 <div className='flex-col'>
                 <CgToggleOn className='text-white'/>
                 <CgToggleOff className='text-white' style={{ marginTop: '-0.3rem' }}/>
