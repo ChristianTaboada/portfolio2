@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 import wallpapers from '../config/wallpapers'
 import TopBar from '../components/menu/TopBar'
 import Dock from '../components/dock/Dock'
+import Windows from '../components/Windows'
 
 const Desktop: React.FC = (): JSX.Element => {
   const [DarkMode, setDarkMode] = useState<boolean>(false)
@@ -12,6 +13,9 @@ const Desktop: React.FC = (): JSX.Element => {
         }) center/cover no-repeat`
         }}>
           <TopBar/>
+          <div className='h-1/2 w-1/2 absolute inset-1/2 transform -translate-x-1/2 -translate-y-1/2 rounded'>
+          <Windows/>
+          </div>
           <div className='flex justify-center'>
           <Dock/>
           </div>
