@@ -1,12 +1,20 @@
 import React, { useState } from 'react'
 import { CgClose, CgExpand, CgMathMinus } from 'react-icons/cg'
 import { IconContext } from 'react-icons'
+import AboutMe from '../components/info/AboutMe'
 
 const Windows: React.FC = () => {
   const [isOpen, setIsOpen] = useState(true)
+  const [activeSection, setActiveSection] = useState('About Me')
 
   const toggleWindow = () => {
     setIsOpen(!isOpen)
+  }
+
+  const sections = ['About Me', 'Education', 'Skills', 'Projects', 'Resume']
+
+  const handleSectionChange = (section) => {
+    setActiveSection(section)
   }
 
   return (
@@ -32,13 +40,48 @@ const Windows: React.FC = () => {
                   </button>
                 </div>
                 <div className='fixed title-window'>
-                    <h1>Titulo de la ventana</h1>
+                    <h1>titulo</h1>
                 </div>
-            </div>
-          <div className=" bg-blue-500 window-content">
-            <p>Contenido de la ventana.</p>
-          </div>
-        </div>
+             </div>
+              <div className='window-content flex'>
+                <div className='sidebar w-1/4 border-r-2 border-gray-400 bg-slate-600 text-white'>
+                  <ul>
+                    {sections.map((section) => (
+                      <li className='flex justify-center items-center' key={section} onClick={() => handleSectionChange(section) }>
+                        {section}
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+                <div className='main-content w-3/4'>
+                  {activeSection === 'About Me' && (
+                    <div>
+                      <AboutMe/>
+                    </div>
+                  )}
+                  {activeSection === 'Education' && (
+                    <div>
+                      <h2>Education</h2>
+                    </div>
+                  )}
+                  {activeSection === 'Skills' && (
+                    <div>
+                      <h2>Skills</h2>
+                    </div>
+                  )}
+                  {activeSection === 'Projects' && (
+                    <div>
+                      <h2>Projects</h2>
+                    </div>
+                  )}
+                  {activeSection === 'Resume' && (
+                    <div>
+                      <h2>Resume</h2>
+                    </div>
+                  )}
+                </div>
+              </div>
+         </div>
       )}
     </div>
   )
