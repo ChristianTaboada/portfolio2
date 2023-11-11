@@ -13,7 +13,7 @@ const Desktop: React.FC = (): JSX.Element => {
         }) center/cover no-repeat`
         }}>
           <TopBar/>
-          <div className='h-1/2 w-1/2 absolute inset-1/2 transform -translate-x-1/2 -translate-y-1/2 rounded'>
+          <div className='h-2/3 w-3/5 absolute inset-1/2 transform -translate-x-1/2 -translate-y-1/2 rounded'>
           <Windows/>
           </div>
           <div className='flex justify-center'>
