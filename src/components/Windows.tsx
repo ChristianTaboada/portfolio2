@@ -14,7 +14,7 @@ const Windows: React.FC = () => {
   const [isOpen, setIsOpen] = useState(true)
   const [activeSection, setActiveSection] = useState('About Me')
 
-  const toggleWindow = () => {
+  const toggleWindow = (): void => {
     setIsOpen(!isOpen)
   }
 
@@ -41,7 +41,7 @@ const Windows: React.FC = () => {
     }
   ]
 
-  const handleSectionChange = (section) => {
+  const handleSectionChange = (section: { title: string }): void => {
     setActiveSection(section.title)
   }
 
@@ -82,7 +82,7 @@ const Windows: React.FC = () => {
                     {sections.map((section) => (
                       <li className={`flex justify-center items-center text-lg ${
                         activeSection === section.title ? 'bg-red-500' : 'hover:bg-gray-300/20'
-                      }`} key={section.title} onClick={() => handleSectionChange(section) }>
+                      }`} key={section.title} onClick={() => { handleSectionChange(section) } }>
                         <span className='mr-1'>{section.icon}</span>
                         {section.title}
                       </li>

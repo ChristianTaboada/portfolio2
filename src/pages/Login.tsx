@@ -12,7 +12,7 @@ const Login: React.FC<MacActions> = (props): JSX.Element => {
   const [password, setPassword] = useState('')
   const [sign, setSign] = useState('Click to enter')
 
-  const keyPress = (e: React.KeyboardEvent) => {
+  const keyPress = (e: React.KeyboardEvent): void => {
     const keyCode = e.key
     if (keyCode === 'Enter') loginHandle()
   }
@@ -20,18 +20,18 @@ const Login: React.FC<MacActions> = (props): JSX.Element => {
     setPassword(e.target.value)
   }
 
-  const loginHandle = () => {
+  const loginHandle = (): void => {
     if (user.password === '' || user.password === password) {
       props.setLogin(true)
     } else if (password !== '') {
       setSign('Incorrect password')
     }
   }
-
+  /*
   const toggleMode = (): void => {
     setDarkMode((prevMode) => !prevMode)
   }
-
+  */
   return (
     <div
      className='w-screen h-screen text-center'
@@ -40,7 +40,7 @@ const Login: React.FC<MacActions> = (props): JSX.Element => {
         DarkMode ? wallpapers.night : wallpapers.day
       }) center/cover no-repeat`
      }}
-     onClick={() => loginHandle()}
+     onClick={() => { loginHandle() }}
      >
       <div className='flex flex-col items-center justify-center h-screen'>
         {/* avatar */}
@@ -56,7 +56,7 @@ const Login: React.FC<MacActions> = (props): JSX.Element => {
          className='text-sm text-white col-start-1 col-span-4 outline-none bg-transparent px-2 placeholder-white'
          type='password'
          placeholder='Enter Password'
-         onClick={(e) => e.stopPropagation()}
+         onClick={(e) => { e.stopPropagation() }}
          onKeyPress={keyPress}
          value={password}
          onChange={handleInputChange}
@@ -74,7 +74,7 @@ const Login: React.FC<MacActions> = (props): JSX.Element => {
         {/* sleep */}
         <div
          className='hstack flex-col text-white w-24 cursor-pointer'
-         onClick={(e) => props.sleepMac(e)}
+         onClick={(e) => { props.sleepMac(e) }}
          >
           <div className='ml-7 h-10 w-10 bg-gray-700 rounded-full'>
             <CgSleep style={{ color: 'white', fontSize: '40px' }}/>
@@ -84,7 +84,7 @@ const Login: React.FC<MacActions> = (props): JSX.Element => {
         {/* restart */}
         <div
          className='hstack flex-col text-white w-24 cursor-pointer'
-         onClick={(e) => props.restartMac(e)}
+         onClick={(e) => { props.restartMac(e) }}
          >
           <div className='ml-7 h-10 w-10 bg-gray-700 rounded-full'>
             <RiRestartLine style={{ color: 'white', fontSize: '40px' }}/>
@@ -94,7 +94,7 @@ const Login: React.FC<MacActions> = (props): JSX.Element => {
         {/* shut down */}
         <div
          className='hstack flex-col text-white w-24 cursor-pointer'
-         onClick={(e) => props.shutMac(e)}
+         onClick={(e) => { props.shutMac(e) }}
          >
           <div className='ml-7 h-10 w-10 bg-gray-700 rounded-full'>
             <CgLogOff style={{ color: 'white', fontSize: '40px' }}/>

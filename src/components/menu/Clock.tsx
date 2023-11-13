@@ -8,20 +8,23 @@ const Clock: React.FC = (): JSX.Element => {
       setCurrentDateTime(new Date())
     }, 1000)
 
-    return () => clearInterval(intervalId)
+    return () => {
+      clearInterval(intervalId)
+    }
   }, [])
-  const formatDay = (date: Date) => {
-    const options = { weekday: 'short' }
+
+  const formatDay = (date: Date): string => {
+    const options = { weekday: 'short' as const }
     return date.toLocaleDateString('en-US', options)
   }
 
-  const formatDate = (date: Date) => {
-    const options = { month: 'short', day: 'numeric' }
+  const formatDate = (date: Date): string => {
+    const options = { month: 'short' as const, day: 'numeric' as const }
     return date.toLocaleDateString('en-US', options)
   }
 
-  const formatTime = (date: Date) => {
-    const options = { hour: 'numeric', minute: '2-digit', hour12: true }
+  const formatTime = (date: Date): string => {
+    const options = { hour: 'numeric' as const, minute: '2-digit' as const, hour12: true }
     return date.toLocaleTimeString('en-US', options)
   }
 
