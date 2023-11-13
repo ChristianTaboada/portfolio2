@@ -18,13 +18,22 @@ const apps: AppsData[] = [
     id: 'whatsapp',
     title: 'Whatsapp',
     desktop: false,
-    img: 'img/icons/whatsapp.png'
+    img: 'img/icons/whatsapp.png',
+    link: `https://wa.me/${+541138722810}`
   },
   {
     id: 'instagram',
     title: 'Instagram',
     desktop: false,
-    img: 'img/icons/instagram.png'
+    img: 'img/icons/instagram.png',
+    link: 'https://www.instagram.com/lapanteragrosa/'
+  },
+  {
+    id: 'twitter',
+    title: 'Twitter',
+    desktop: false,
+    img: 'img/icons/twitter.png',
+    link: 'https://twitter.com/LaPanteraGrosa'
   }
 ]
 

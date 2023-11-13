@@ -80,7 +80,7 @@ const Windows: React.FC = () => {
                   </div>
                   <ul className='mt-2'>
                     {sections.map((section) => (
-                      <li className={`flex justify-center items-center ${
+                      <li className={`flex justify-center items-center text-lg ${
                         activeSection === section.title ? 'bg-red-500' : 'hover:bg-gray-300/20'
                       }`} key={section.title} onClick={() => handleSectionChange(section) }>
                         <span className='mr-1'>{section.icon}</span>
