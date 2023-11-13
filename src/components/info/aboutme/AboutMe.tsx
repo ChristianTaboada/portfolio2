@@ -27,10 +27,11 @@ const AboutMe: React.FC = (): JSX.Element => {
       icon: <CgPhone/>
     }
   ]
+
   const handleSectionChange = (section) => {
     setActiveSection(section)
-    console.log(handleSectionChange)
   }
+
   return (
       <div className='flex flex-grow'>
         <div className='w-2/6 h-full border-r border-gray-300 overflow-y-auto max-h-[60vh]'>
