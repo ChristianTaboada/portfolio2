@@ -8,7 +8,8 @@ import { RiRestartLine } from 'react-icons/ri'
 // import { IconContext } from 'react-icons'
 
 const Login: React.FC<MacActions> = (props): JSX.Element => {
-  const [DarkMode, setDarkMode] = useState(false)
+//   const [DarkMode, setDarkMode] = useState(false)
+  const [DarkMode] = useState(false)
   const [password, setPassword] = useState('')
   const [sign, setSign] = useState('Click to enter')
 

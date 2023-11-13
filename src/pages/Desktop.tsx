@@ -5,7 +5,8 @@ import Dock from '../components/dock/Dock'
 import Windows from '../components/Windows'
 
 const Desktop: React.FC = (): JSX.Element => {
-  const [DarkMode, setDarkMode] = useState<boolean>(false)
+  // const [DarkMode, setDarkMode] = useState<boolean>(false)
+  const [DarkMode] = useState<boolean>(false)
   return (
         <div className='h-screen w-screen' style={{
           background: `url(${
