@@ -1,10 +1,17 @@
 import React, { useState } from 'react'
 import apps from '../../config/app'
 
-const Dock: React.FC = (): JSX.Element => {
-  const [openWindows, setOpenWindows] = useState([])
+interface App {
+  id: string
+  title: string
+  img: string
+  link: string
+}
 
-  const handleAppClick = (app) => {
+const Dock: React.FC = (): JSX.Element => {
+  const [openWindows, setOpenWindows] = useState<App[]>([])
+
+  const handleAppClick = (app: App): void => {
     const newWindow = {
       id: app.id,
       title: app.title,
@@ -18,7 +25,7 @@ const Dock: React.FC = (): JSX.Element => {
     <div className="fixed bottom-5 bg-gray-700/10 p-2 rounded">
       <div className="flex justify-center space-x-2">
         {apps.map((app) => (
-          <div key={app.id} onClick={() => handleAppClick(app)}>
+          <div key={app.id} onClick={() => { handleAppClick(app) }}>
             <div className="flex items-center">
               <a href={app.link} target='_blank' rel='noopener noreferrer'>
               <img src={app.img} alt={app.title} className="w-10 h-10" />
