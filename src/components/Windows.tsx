@@ -1,6 +1,9 @@
 import React, { useState } from 'react'
-import { CgClose, CgExpand, CgMathMinus } from 'react-icons/cg'
+import { CgClose, CgExpand, CgMathMinus, CgUser, CgFolder } from 'react-icons/cg'
 import { IoOptionsOutline } from 'react-icons/io5'
+import { HiOutlineBookOpen } from 'react-icons/hi'
+import { BiCog } from 'react-icons/bi'
+import { VscFilePdf } from 'react-icons/vsc'
 import { IconContext } from 'react-icons'
 
 import AboutMe from './info/aboutme/AboutMe'
@@ -15,10 +18,31 @@ const Windows: React.FC = () => {
     setIsOpen(!isOpen)
   }
 
-  const sections = ['About Me', 'Education', 'Skills', 'Projects', 'Resume']
+  const sections = [
+    {
+      title: 'About Me',
+      icon: <CgUser/>
+    },
+    {
+      title: 'Education',
+      icon: <HiOutlineBookOpen/>
+    },
+    {
+      title: 'Skills',
+      icon: <BiCog/>
+    },
+    {
+      title: 'Projects',
+      icon: <CgFolder/>
+    },
+    {
+      title: 'Resume',
+      icon: <VscFilePdf/>
+    }
+  ]
 
   const handleSectionChange = (section) => {
-    setActiveSection(section)
+    setActiveSection(section.title)
   }
 
   return (
@@ -57,9 +81,10 @@ const Windows: React.FC = () => {
                   <ul className='mt-2'>
                     {sections.map((section) => (
                       <li className={`flex justify-center items-center ${
-                        activeSection === section ? 'bg-red-500' : 'hover:bg-gray-300/20'
-                      }`} key={section} onClick={() => handleSectionChange(section) }>
-                        {section}
+                        activeSection === section.title ? 'bg-red-500' : 'hover:bg-gray-300/20'
+                      }`} key={section.title} onClick={() => handleSectionChange(section) }>
+                        <span className='mr-1'>{section.icon}</span>
+                        {section.title}
                       </li>
                     ))}
                   </ul>
