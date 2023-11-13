@@ -34,9 +34,11 @@ const Boot: React.FC<BootProps> = ({ restart, sleep, setBooting }): JSX.Element 
   )
 
   const handleClick = (): void => {
-    if (sleep) setBooting(false)
-    else if (restart || loading) return 
-    else setLoading(true)
+    if (sleep) {
+      setBooting(false)
+    } else if (!restart && !loading) {
+      setLoading(true)
+    }
   }
 
   return (
@@ -49,7 +51,6 @@ const Boot: React.FC<BootProps> = ({ restart, sleep, setBooting }): JSX.Element 
       </IconContext.Provider>
       {loading && (
         <div className="absolute mx-auto bottom-1/3 left-0 right-0 w-56 h-1 sm:h-1.5 bg-gray-500 rounded overflow-hidden"
-        m="t-16 sm:t-24 x-auto"
         >
           <span
           className='absolute top-0 bg-white h-full rounded-sm'
@@ -60,8 +61,6 @@ const Boot: React.FC<BootProps> = ({ restart, sleep, setBooting }): JSX.Element 
       {!restart && !loading && (
         <div
         className='absolute bottom-1/3 left-0 right-0 text-white text-center text-sm'
-        m= 't-16 sm:t-20 x-auto'
-        text= 'sm gray-200 center'
         >
           Click to {sleep ? 'wake up' : 'boot'}
         </div>
