@@ -6,9 +6,14 @@ import { FaGraduationCap } from 'react-icons/fa'
 import Professional from './Professional'
 import Complementary from './Complementary'
 
+interface Section {
+  title: string
+  subtitle: string
+  icon: JSX.Element
+}
 const Education: React.FC = (): JSX.Element => {
   const [activeSection, setActiveSection] = useState('Professional')
-  const sections = [
+  const sections: Section[] = [
     {
       title: 'Professional',
       subtitle: 'Mi carrera profesional',
@@ -21,7 +26,7 @@ const Education: React.FC = (): JSX.Element => {
     }
   ]
 
-  const handleSectionChange = (section) => {
+  const handleSectionChange = (section: string): void => {
     setActiveSection(section)
   }
 
@@ -30,7 +35,7 @@ const Education: React.FC = (): JSX.Element => {
             <div className='w-2/6 h-full border-r border-gray-300 overflow-y-auto max-h-[60vh]'>
                 <ul>
                     {sections.map((section) => (
-                        <li className= 'border-b border-gray-300 p-4' key={section.title} onClick={() => handleSectionChange(section.title)}>
+                        <li className= 'border-b border-gray-300 p-4' key={section.title} onClick={() => { handleSectionChange(section.title) }}>
                             <div className='flex'>
                                 <IconContext.Provider value={{ className: 'text-gray-500 mr-1 mt-2' }}>
                                     {section.icon}

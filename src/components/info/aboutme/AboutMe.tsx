@@ -7,10 +7,16 @@ import Biography from './Biography'
 import Hobbies from './Hobbies'
 import Contact from './Contact'
 
+interface Section {
+  title: string
+  subtitle: string
+  icon: JSX.Element
+}
+
 const AboutMe: React.FC = (): JSX.Element => {
   const [activeSection, setActiveSection] = useState('Biography')
 
-  const sections = [
+  const sections: Section[] = [
     {
       title: 'Biography',
       subtitle: 'Esta es mi breve biografia',
@@ -28,7 +34,7 @@ const AboutMe: React.FC = (): JSX.Element => {
     }
   ]
 
-  const handleSectionChange = (section) => {
+  const handleSectionChange = (section: string): void => {
     setActiveSection(section)
   }
 
@@ -37,7 +43,7 @@ const AboutMe: React.FC = (): JSX.Element => {
         <div className='w-2/6 h-full border-r border-gray-300 overflow-y-auto max-h-[60vh]'>
             <ul>
                 {sections.map((section) => (
-                    <li className='border-b border-gray-300 p-4' key={section.title} onClick={() => handleSectionChange(section.title)}>
+                    <li className='border-b border-gray-300 p-4' key={section.title} onClick={() => { handleSectionChange(section.title) }}>
                         <div className='flex'>
                           <IconContext.Provider value={{ className: 'text-gray-500 mr-1 mt-2' }}>
                             {section.icon}
