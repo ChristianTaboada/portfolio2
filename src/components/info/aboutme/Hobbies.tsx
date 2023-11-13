@@ -47,13 +47,13 @@ const Hobbies: React.FC = (): JSX.Element => {
 
   return (
     <div className='flex flex-col mx-10'>
-      <div className='flex items-center mt-2'>
+      <div className='flex items-center mt-5'>
         <span className='text-gray-400 mr-2'>H1</span>
         <h2 className='text-2xl'>Mis Pasatiempos y Gustos</h2>
       </div>
 
       <div className='flex items-center mt-2'>
-        <ul className='ml-7 mt-2'>
+        <ul className='ml-8 mt-2'>
           {hobbiesData.map((hobby) => (
             <li key={hobby.title} className='flex items-center text-orange-500 mb-1'>
                 <div className='flex'>
