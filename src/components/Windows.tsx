@@ -9,6 +9,7 @@ import { IconContext } from 'react-icons'
 import AboutMe from './info/aboutme/AboutMe'
 import Education from './info/education/Education'
 import Skills from './info/skills/Skills'
+import Resume from './info/resume/Resume'
 
 const Windows: React.FC = () => {
   const [isOpen, setIsOpen] = useState(true)
@@ -94,7 +95,7 @@ const Windows: React.FC = () => {
                   {activeSection === 'Education' && <Education/>}
                   {activeSection === 'Skills' && <Skills/>}
                   {activeSection === 'Projects' && <h2>Projects</h2>}
-                  {activeSection === 'Resume' && <h2>Resume</h2>}
+                  {activeSection === 'Resume' && <Resume/>}
                 </div>
               </div>
          </div>
