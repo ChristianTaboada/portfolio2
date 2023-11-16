@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import { Document, Page, pdfjs } from 'react-pdf'
 import { IconContext } from 'react-icons'
-import { CgArrowLongLeft, CgArrowLongRight } from "react-icons/cg";
+import { CgArrowLongLeft, CgArrowLongRight } from 'react-icons/cg'
 
 import pdf from './CV- Christian Taboada FullStack.pdf'
 
@@ -9,7 +9,7 @@ import pdf from './CV- Christian Taboada FullStack.pdf'
 pdfjs.GlobalWorkerOptions.workerSrc = `https://unpkg.com/pdfjs-dist@${pdfjs.version}/build/pdf.worker.min.js`
 
 const PDFViewer: React.FC = (): JSX.Element => {
-  const [numPages, setNumPages] = useState<number>()
+  const [numPages, setNumPages] = useState<number>(0)
   const [pageNumber, setPageNumber] = useState<number>(1)
 
   function onDocumentLoadSuccess ({ numPages }: { numPages: number }): void {
@@ -23,7 +23,7 @@ const PDFViewer: React.FC = (): JSX.Element => {
   }
 
   const goToNextPage = (): void => {
-    if (pageNumber < numPages) {
+    if (numPages !== undefined && pageNumber < numPages) {
       setPageNumber(pageNumber + 1)
     }
   }
@@ -39,7 +39,7 @@ const PDFViewer: React.FC = (): JSX.Element => {
         <span>
           Page {pageNumber} of {numPages}
         </span>
-        <button onClick={goToNextPage} disabled={pageNumber >= numPages}>
+        <button onClick={goToNextPage} disabled={ pageNumber >= numPages }>
         <IconContext.Provider value={{ className: 'text-white w-8 h-8' }}>
             <CgArrowLongRight/>
           </IconContext.Provider>
@@ -49,7 +49,7 @@ const PDFViewer: React.FC = (): JSX.Element => {
         <Page pageNumber={pageNumber}
         renderTextLayer={false}
         renderAnnotationLayer={false}
-        customTextRenderer={false}/>
+        />
       </Document>
     </div>
   )
