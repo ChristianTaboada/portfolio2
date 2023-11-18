@@ -1,3 +1,24 @@
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu:wght@300;400;500;700&display=swap');
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+
+.font-ubuntu {
+    font-family: 'Ubuntu', sans-serif;
+}
+.font-ubuntu-light {
+    font-weight: 300;
+}
+
+.font-ubuntu-regular {
+    font-weight: 400;
+}
+
+.font-ubuntu-medium {
+    font-weight: 500;
+}
+
+.font-ubuntu-bold {
+    font-weight: 700;
+}
