@@ -5,7 +5,7 @@ const Contact: React.FC = (): JSX.Element => {
         <div className='flex flex-col mx-10'>
           <div className='flex items-center mt-5'>
             <span className='text-gray-400 mr-2'>H2</span>
-            <h2 className='text-2xl'>Contactame</h2>
+            <h2 className='text-3xl'>Contacto</h2>
           </div>
           <div className='flex flex-col mt-2 ml-7'>
               <div className='flex flex-col'>

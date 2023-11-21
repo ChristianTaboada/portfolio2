@@ -49,7 +49,7 @@ const Hobbies: React.FC = (): JSX.Element => {
     <div className='flex flex-col mx-10'>
       <div className='flex items-center mt-5'>
         <span className='text-gray-400 mr-2'>H1</span>
-        <h2 className='text-2xl'>Mis Pasatiempos y Gustos</h2>
+        <h2 className='text-3xl'>Hobbies</h2>
       </div>
 
       <div className='flex items-center mt-2'>

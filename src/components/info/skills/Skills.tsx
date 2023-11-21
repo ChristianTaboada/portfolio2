@@ -1,7 +1,6 @@
 import React, { useState } from 'react'
 import { IconContext } from 'react-icons'
-import { FaGithub } from 'react-icons/fa'
-import { CgPacman } from 'react-icons/cg'
+import { FaGithub, FaCogs } from 'react-icons/fa'
 
 import GithubStats from './GithubStats'
 import Technologies from './Technologies'
@@ -23,7 +22,7 @@ const Skills: React.FC = (): JSX.Element => {
     {
       title: 'Technologies',
       subtitle: 'Tecnologias que uso y que estoy aprendiendo',
-      icon: <CgPacman/>
+      icon: <FaCogs/>
     }
   ]
 
@@ -38,7 +37,7 @@ const Skills: React.FC = (): JSX.Element => {
                     {sections.map((section) => (
                         <li className= 'border-b border-gray-300 p-4' key={section.title} onClick={() => { handleSectionChange(section.title) }}>
                             <div className='flex'>
-                                <IconContext.Provider value={{ className: 'text-gray-500 mr-1 mt-2' }}>
+                                <IconContext.Provider value={{ className: 'text-gray-500 mr-1 mt-2 w-5 h-5' }}>
                                     {section.icon}
                                 </IconContext.Provider>
                                 <div className='flex flex-col ml-2'>

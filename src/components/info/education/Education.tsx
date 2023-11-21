@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import { IconContext } from 'react-icons'
-import { CgLaptop } from 'react-icons/cg'
+import { FaLaptopCode  } from 'react-icons/fa6'
 import { FaGraduationCap } from 'react-icons/fa'
 
 import Professional from './Professional'
@@ -12,16 +12,16 @@ interface Section {
   icon: JSX.Element
 }
 const Education: React.FC = (): JSX.Element => {
-  const [activeSection, setActiveSection] = useState('Professional')
+  const [activeSection, setActiveSection] = useState('Academic Education')
   const sections: Section[] = [
     {
-      title: 'Professional',
-      subtitle: 'Mi carrera profesional',
-      icon: <CgLaptop/>
+      title: 'Academic Education',
+      subtitle: 'Formación Academica y Desarrollo Profesional',
+      icon: <FaLaptopCode />
     },
     {
-      title: 'Complementary',
-      subtitle: 'Cursos complementarios',
+      title: 'Professional Development',
+      subtitle: 'Cursos Orientados a la Carrera',
       icon: <FaGraduationCap/>
     }
   ]
@@ -37,12 +37,12 @@ const Education: React.FC = (): JSX.Element => {
                     {sections.map((section) => (
                         <li className= 'border-b border-gray-300 p-4' key={section.title} onClick={() => { handleSectionChange(section.title) }}>
                             <div className='flex'>
-                                <IconContext.Provider value={{ className: 'text-gray-500 mr-1 mt-2' }}>
-                                    {section.icon}
-                                </IconContext.Provider>
+                              <IconContext.Provider value={{ className: 'text-gray-500 mr-1 mt-2 w-5 h-5' }}>
+                                {section.icon}
+                              </IconContext.Provider>
                                 <div className='flex flex-col ml-2'>
-                                    <h2 className='text-lg'>{section.title}</h2>
-                                    <p className=' text-sm text-gray-500'>{section.subtitle}</p>
+                                  <h2 className='text-lg'>{section.title}</h2>
+                                  <p className=' text-sm text-gray-500'>{section.subtitle}</p>
                                 </div>
                             </div>
                         </li>
@@ -50,8 +50,8 @@ const Education: React.FC = (): JSX.Element => {
                 </ul>
             </div>
             <div className='flex w-4/6 bg-white overflow-y-auto max-h-[60vh]'>
-                {activeSection === 'Professional' && <Professional/>}
-                {activeSection === 'Complementary' && <Complementary/>}
+                {activeSection === 'Academic Education' && <Professional/>}
+                {activeSection === 'Professional Development' && <Complementary/>}
             </div>
         </div>
   )

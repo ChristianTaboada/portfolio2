@@ -22,8 +22,8 @@ const Biography: React.FC = (): JSX.Element => {
         </div>
         <div className='flex flex-col ml-7 mt-1'>
             <p className='mb-2'>
-            Hola gente soy <span className='text-orange-500'>Christian Taboada</span>, un Desarrollador Full Stack desde el 2022.
-            Tambien soy un estudiante de la UTN, cursando la carrera de <span className='text-orange-500'>Ingenieria en Sistemas de Informacion</span>
+            Hola gente, soy <span className='text-orange-500'>Christian Taboada</span>, un Desarrollador Full Stack desde el 2022.
+            También soy un estudiante de la UTN, cursando la carrera de <span className='text-orange-500'>Ingenieria en Sistemas de Informacion</span>
             </p>
             <p className='mb-1'>
             Mi viaje tecnológico comenzó con un sólido dominio de JavaScript y TypeScript.
