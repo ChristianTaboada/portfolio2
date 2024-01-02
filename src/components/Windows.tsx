@@ -10,6 +10,7 @@ import AboutMe from './info/aboutme/AboutMe'
 import Education from './info/education/Education'
 import Skills from './info/skills/Skills'
 import Resume from './info/resume/Resume'
+import Projects from './info/projects/Projects'
 
 const Windows: React.FC = () => {
   const [isOpen, setIsOpen] = useState(true)
@@ -98,7 +99,7 @@ const Windows: React.FC = () => {
                   {activeSection === 'About Me' && <AboutMe/>}
                   {activeSection === 'Education' && <Education/>}
                   {activeSection === 'Skills' && <Skills/>}
-                  {activeSection === 'Projects' && <h2>Projects</h2>}
+                  {activeSection === 'Projects' && <Projects/>}
                   {activeSection === 'Resume' && <Resume/>}
                 </div>
               </div>

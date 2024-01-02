@@ -34,6 +34,12 @@ const apps: AppsData[] = [
     desktop: false,
     img: 'img/icons/twitter.png',
     link: 'https://twitter.com/LaPanteraGrosa'
+  },
+  {
+    id: 'Launchpad',
+    title: 'Launchpad',
+    desktop: false,
+    img: 'img/icons/launchpad.png'
   }
 ]
 
