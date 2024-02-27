@@ -5,7 +5,7 @@ interface App {
   id: string
   title: string
   img: string
-  link: string
+  link?: string
 }
 
 const Dock: React.FC = (): JSX.Element => {
