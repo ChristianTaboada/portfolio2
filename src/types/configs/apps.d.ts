@@ -12,5 +12,5 @@ export interface AppsData {
   x?: number
   y?: number
   content?: JSX.Element
-  link: string
+  link?: string
 }

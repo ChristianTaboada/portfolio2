@@ -50,7 +50,7 @@ const Windows: React.FC = () => {
   return (
     <div>
       {isOpen && (
-         <div className="flex flex-col min-h-[60vh] border border-gray-400 rounded floating-window overflow-hidden">
+         <div className="flex flex-col min-h-[60vh] sm: w-full border border-gray-400 rounded floating-window overflow-hidden">
             <div className='flex p-1 items-center justify-center space-x-2 bg-gray-200/90 header-window'>
                 <div className='mr-auto space-x-1 button-window'>
                   <button onClick={toggleWindow} className="bg-red-500 rounded-full window-button">
