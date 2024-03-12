@@ -12,6 +12,7 @@ const DressMe: React.FC = (): JSX.Element => {
       <h2 className='text-xl'>E-Commerce</h2>
     </div>
     <p className='ml-7 text-base text-orange-400'>Febrero 2023 - Abril 2023</p>
+    <p className='ml-7 text-base'>Link al Repositorio: <a href='https://github.com/CaroPam88/Proyecto-Final-Henry' target='blank'>https://github.com/CaroPam88/Proyecto-Final-Henry</a></p>
     <p className='ml-7 text-base mt-2'>Durante tres meses, formé parte de un equipo de desarrollo que construyó un eCommerce de ropa desde cero, utilizando la metodología ágil Scrum para una colaboración eficiente. Nuestro objetivo era proporcionar a los usuarios una experiencia de compra fluida y segura, priorizando la interactividad y la usabilidad.</p>
       <ul className='list-disc ml-11 mt-5'>
         <li>
