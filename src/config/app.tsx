@@ -26,7 +26,7 @@ const apps: AppsData[] = [
     title: 'Instagram',
     desktop: false,
     img: 'img/icons/instagram.png',
-    link: 'https://www.instagram.com/lapanteragrosa/'
+    link: 'https://www.instagram.com/christaboada.ok/'
   },
   {
     id: 'twitter',
